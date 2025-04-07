@@ -1,6 +1,5 @@
 ---
 title: "[Spring Boot] 타임리프(Thymeleaf)란?"
-excerpt: "본문의 주요 내용을 여기에 입력하세요"
 
 categories:
   - Web
