@@ -6,8 +6,6 @@ categories:
 tags:
   - [Spring boot, Thymeleaf]
 
-permalink: /categories1/post-name-here/
-
 toc: true
 toc_sticky: true
 

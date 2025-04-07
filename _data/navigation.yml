@@ -20,3 +20,5 @@ main:
 categories:
   - title: "Web"
     url: /categories/web/
+  - title: "Java"
+    url: /categories/java/
