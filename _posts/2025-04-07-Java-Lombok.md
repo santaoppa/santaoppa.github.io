@@ -23,24 +23,24 @@ Lombok(롬복)은 반복되는 메소드를 Annotation을 사용해서 자동으
 ```
 public class UserDTO {
 
-  private String id;
-  private String name;
+    private String id;
+    private String name;
 
-  public String getId(){
-      return id;
-  }
+    public String getId(){
+        return id;
+    }
 
-  public void setId(String id){
-      this.id = id;
-  }
+    public void setId(String id){
+        this.id = id;
+    }
 
-  public String getName(){
-      return name;
-  }
+    public String getName(){
+        return name;
+    }
 
-  public void setName(String name){
-      this.name = name;
-  }
+    public void setName(String name){
+        this.name = name;
+    }
 
 }
 ```
@@ -51,8 +51,8 @@ public class UserDTO {
 @Setter
 public class UserDTO {
 
-  private String id;
-  private String name;
+    private String id;
+    private String name;
 
 }
 ```
@@ -70,13 +70,13 @@ public class UserDTO {
 @AllArgsConstructor
 public class UserDTO {
 
-  private String id;
-  private String name;
+    private String id;
+    private String name;
 
-  //public UserDto(String id, String name) {
-  //    this.id = id;
-  //    this.name = name;
-  //}
+    //public UserDto(String id, String name) {
+    //    this.id = id;
+    //    this.name = name;
+    //}
 
 }
 
@@ -89,10 +89,10 @@ public class UserDTO {
 @NoArgsConstructor
 public class UserDTO {
 
-  private String id;
-  private String name;
+    private String id;
+    private String name;
 
-  //public UserDto() {}
+    //public UserDto() {}
 
 }
 
@@ -105,15 +105,15 @@ public class UserDTO {
 @RequiredArgsConstructor
 public class UserDTO {
 
-  @NonNull
-  private String id;
-  private final String name;
-  private String password;
+    @NonNull
+    private String id;
+    private final String name;
+    private String password;
 
-  //public UserDto(String id, String name) {
-  //    this.id = id;
-  //    this.name = name;
-  //}
+    //public UserDto(String id, String name) {
+    //    this.id = id;
+    //    this.name = name;
+    //}
 }
 
 ```
@@ -125,16 +125,16 @@ public class UserDTO {
 @EqualsAndHashCode(of = {"id", "emailId"}) //Id와 emailId가 동일하면 같은 객체로 인식
 public class UserDTO {
 
-  @NonNull
-  private String id;
-   @NonNull
-  private String emailId;
-  private String name;
+    @NonNull
+    private String id;
+    @NonNull
+    private String emailId;
+    private String name;
 
-  //public UserDto(String id, String name) {
-  //    this.id = id;
-  //    this.name = name;
-  //}
+    //public UserDto(String id, String name) {
+    //    this.id = id;
+    //    this.name = name;
+    //}
 
 }
 
