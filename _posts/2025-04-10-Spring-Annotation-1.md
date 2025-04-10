@@ -1,5 +1,5 @@
 ---
-title: "[Spring] @RestController란?
+title: "[Spring] @RestController란?"
 
 categories:
   - Web
