@@ -17,8 +17,7 @@ last_modified_at: 2025-04-10
 ```
 npm i axios
 ```
-> **Axios란?**
-jQuery의 Ajax와 비슷한 라이브러리리
+> **Axios란?** jQuery의 Ajax와 비슷한 라이브러리로  node.js와 브라우저를 위한 Promise 기반 HTTP 클라이언트
 
 
 ## 환경 변수 파일 생성
@@ -27,9 +26,10 @@ react 프로젝트에 .env 파일 생성
 REACT_APP_API_URL=http://localhost:8080/api
 ```
 
-> 💡 주의할 점 <br/>
+> 💡 **주의할 점** <br/>
 > 1. 환경 변수 이름은 반드시 `REACT_APP_` 으로 시작해야함<br/>
 > 2. `.env` 파일 수정 후에는 서버 재시작 필요
+
 
 
 
