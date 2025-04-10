@@ -1,5 +1,5 @@
 ---
-title: "[Web] Rest API란?
+title: "[Web] Rest API란?"
 
 categories:
   - Web
