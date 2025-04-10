@@ -1,5 +1,5 @@
 ---
-title: "[Web] Rest API란?
+title: "[Web] Rest API란?"
 
 categories:
   - Web
@@ -52,6 +52,8 @@ HTTP 프로토콜이 무상태이므로, REST 또한 요청 간 상태를 저장
 
 5. **인터페이스 일관성**
 URI로 자원을 지정하고, 제한된 HTTP Method로 자원에 대한 행위를 수행
+
+
 
 
 
