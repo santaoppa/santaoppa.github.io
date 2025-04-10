@@ -1,5 +1,5 @@
 ---
-title: "[Spring] @PathVariable란?
+title: "[Spring] @PathVariable란?"
 
 categories:
   - Web
