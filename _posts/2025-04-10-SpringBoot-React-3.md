@@ -60,3 +60,29 @@ const onClickSubmit = () => {
 React와 API 연동하여 게시글 등록 성공!
 
 ![Image](https://github.com/user-attachments/assets/97c9e603-36a0-424e-a610-920f882565e7)
+
+
+
+
+## 게시글 수정
+```
+const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPost(prevPost => ({
+        ...prevPost,
+        [name]: value
+    }));
+};
+ 
+ ...
+ 
+<input
+    id="title"
+    name="title"
+    type="text"
+    value={post.title}
+    onChange={handleChange}
+    placeholder="제목을 입력하세요"
+    required
+/>
+```
