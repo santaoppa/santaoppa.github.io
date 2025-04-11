@@ -47,7 +47,7 @@ npm install react-router-dom
 ```  
 
 ### 예시 코드
-```
+```js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import BbsWrite from "./pages/BbsWrite";
