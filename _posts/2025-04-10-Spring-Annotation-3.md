@@ -19,5 +19,5 @@ last_modified_at: 2025-04-10
 
 기본적으로 경로 변수는 반드시 값을 가져야 하며, 값이 없는 경우 404 오류가 발생한다.
 
-아래 URL에서 밑줄 친 부분을 @PathVariable로 처리 가능
+아래 URL에서 밑줄 친 부분을 @PathVariable로 처리 가능<br/>
 localhost:3000/api/posts/<U>3</U>

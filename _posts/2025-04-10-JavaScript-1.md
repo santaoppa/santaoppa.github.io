@@ -13,32 +13,30 @@ date: 2025-04-10
 last_modified_at: 2025-04-10
 ---
 
-var, let, const는 자바스크립트에서 변수를 선언할 때 사용하는 키워드로
-중복 선언, 재할당 가능 여부, 스코프 등 차이가 있다.
+## var, let, const란?
+var, let, const는 자바스크립트에서 변수를 선언할 때 사용하는 키워드이다.  
 
+## var, let, const 차이
 1. 중복 선언과 재할당
 - **var** : 중복 선언과 재할당 모두 가능
-
-- **let** : 중복 선언 ❌ / 재할당 ⭕
+- **let** : 중복 선언 ❌ / 재할당 ⭕  
 ```
 let a = 5;
 let a = 10;
 cnosole.log(a); // SyntaxError: Identifier 'a' has already been declared
 ```
-
-- **const** : 중복 선언 ❌ / 재할당 ❌
+- **const** : 중복 선언 ❌ / 재할당 ❌  
 ```
 const a = 5;
 console.log(a); // 5
 
 a = 10;
 console.log(a); // TypeError: Assignment to constant variable.
-```
-
+```  
 
 
 2. 스코프 범위
-- **var** : 함수 단위 스코프
+- **var** : 함수 단위 스코프  
 ```
 function test(){
     var a = 10;
@@ -47,11 +45,11 @@ function test(){
 
 test(); // 10
 console.log(a);  // ReferenceError: a is not defined
-```
+```  
 
-- **let** : 블록 단위 스코프
-- **const** : 블록 단위 스코프
-{} 블록 내부에서 선언된 let, const 변수는 외부에서 참조되지 않는다.
+- **let** : 블록 단위 스코프  
+- **const** : 블록 단위 스코프  
+> {} 블록 내부에서 선언된 let, const 변수는 외부에서 참조되지 않는다.
 ```
 function test(){
     let a = 10;
@@ -59,12 +57,11 @@ function test(){
 }
 
 console.log(a);  // ReferenceError: a is not defined
-```
-
+```  
 
 
 3. 호이스팅
-- **var** : 호이스팅 ⭕
+- **var** : 호이스팅 ⭕  
 ```
 console.log(a);  // undefined : 변수 선언 이전에 변수 참조 가능
 
@@ -75,11 +72,10 @@ console.log(a);  // undefined
 a = 10;  // 할당
 
 console.log(a);  // 10
-```
-
+```  
 
 - **let** : 호이스팅 ⭕
-- **const** : 호이스팅 ⭕
+- **const** : 호이스팅 ⭕  
 ```
 console.log(a);  // ReferenceError : 변수 선언 이전에 변수 참조 불가능
 
@@ -90,11 +86,10 @@ console.log(a);  // undefined
 a = 10;  // 할당
 
 consloe.log(a);  // 10
-```
+```  
 
 
-
-## 정리
+## ✅ 정리
 - **var** : 되도록 사용 ❌ (예측 어려움)
 - **let** : 변할 수 있는 값을 선언할 때 사용
 - **const** : 변하지 않는 값을 선언할 때 사용 (Default)
