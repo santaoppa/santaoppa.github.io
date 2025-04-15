@@ -70,7 +70,11 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 }
 ```  
 1. 프론트엔드와 백엔드가 분리돼 있을 떄 CORS 오류를 방지하기 위해 설정  
-2. CSRF(사이트 간 요청 위조) 보호 비활성화  
+2. CSRF(사이트 간 요청 위조) 보호 비활성화
+3. JWT 기반 인증에서는 서버가 세션을 만들지 않기 떄문에 비활성화
+4. 어떤 API에 어떤 사용자를 허가할 것인지 설정  
+5. JWT 인증을 처리할 커스텀 필터(`JwtTokenFilter`)를 Spring Security의 기본 로그인 필터(`UsernamePasswordAuthenticationFilter`) 앞에 끼워 넣는다는 의미
+   
 <details>
     <summary>CSRF(Cross-site Request Forgery)란?</summary>
     <div markdown="1">
@@ -79,7 +83,6 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
     </div>
 </details>  
 
-3. JWT 기반 인증에서는 서버가 세션을 만들지 않기 떄문에 비활성화  
 <details>
     <summary>세션 기반 인증이란?</summary>
     <div markdown="1">
@@ -96,10 +99,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         ✅ 서버는 사용자의 로그인 상태 모름. 정보 모름. 그냥 토큰이 유효한지 검증함<br>
         ➡️ 서버는 상태를 기억하지 않음 → stateless
     </div>
-</details>  
+</details>   
 
-4. 어떤 API에 어떤 사용자를 허가할 것인지 설정  
-5. JWT 인증을 처리할 커스텀 필터(`JwtTokenFilter`)를 Spring Security의 기본 로그인 필터(`UsernamePasswordAuthenticationFilter`) 앞에 끼워 넣는다는 의미
 <details>
     <summary>Spring Security 기본 인증 흐름</summary>
     <div markdown="1">
@@ -108,7 +109,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         3) 인증 성공 시 → 세션 만들어서 SecurityContext에 저장함<br><br>
         ✔️ SecurityContext란? 현재 사용자의 인증(Authentication) 정보를 담고 있는 Spring Security의 저장소
     </div>
-</details>
+</details>  
 
 <details>
     <summary>Spring Security 6.1부터 변경된 보안 설정 방식</summary>
@@ -118,7 +119,6 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         - 설정 방식 : 체인형(.) ➡️ 람다식
     </div>
 </details>  
-
 
 
 ## 인증 필터 처리 흐름 순서
