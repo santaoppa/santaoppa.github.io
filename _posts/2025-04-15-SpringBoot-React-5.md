@@ -82,18 +82,17 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 <details>
     <summary>세션 기반 인증이란?</summary>
     <div markdown="1">
-        1) 로그인 시, 서버는 사용자 정보를 세션에 저장
-        2) 세션ID를 클라이언트에 쿠키로 보냄.
-        3) 이후 요청마다 쿠키에 세션 ID가 자동 첨부됨
-        ✅ 서버는 쿠키 내의 세션 ID를 키로 해서 서버가 직접 메모리에 사용자의 로그인 상태와 정보(예: 이름, 권한 등)를 기억하고 있음 
-        ➡️ 서버가 상태(state)를 가짐
-
-        반면, JWT 기반 인증이란?
-        1) 로그인 시, 서버가 JWT 토큰만 만들어서 클라이언트에 전달
-        2) 클라이언트는 이후 요청마다 Authorization 헤더에 토큰을 넣음
-        3) 서버는 매번 토큰 안의 정보를 읽어서 사용자 정보를 검증함
-        ✅ 서버는 사용자의 로그인 상태 모름. 정보 모름. 그냥 토큰이 유효한지 검증함
-        ➡️ 서버는 상태를 기억하지 않음 → stateless
+        1) 로그인 시, 서버는 사용자 정보를 세션에 저장<br>
+        2) 세션ID를 클라이언트에 쿠키로 보냄.<br>
+        3) 이후 요청마다 쿠키에 세션 ID가 자동 첨부됨<br>
+        ✅ 서버는 쿠키 내의 세션 ID를 키로 해서 서버가 직접 메모리에 사용자의 로그인 상태와 정보(예: 이름, 권한 등)를 기억하고 있음 <br>
+        ➡️ 서버가 상태(state)를 가짐<br><br>
+        반면, JWT 기반 인증이란?<br>
+        1) 로그인 시, 서버가 JWT 토큰만 만들어서 클라이언트에 전달<br>
+        2) 클라이언트는 이후 요청마다 Authorization 헤더에 토큰을 넣음<br>
+        3) 서버는 매번 토큰 안의 정보를 읽어서 사용자 정보를 검증함<br>
+        ✅ 서버는 사용자의 로그인 상태 모름. 정보 모름. 그냥 토큰이 유효한지 검증함<br>
+        ➡️ 서버는 상태를 기억하지 않음 → stateless<br>
     </div>
 </details>  
 
@@ -102,11 +101,11 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 <details>
     <summary>Spring Security 기본 인증 흐름</summary>
     <div markdown="1">
-        1) UsernamePasswordAuthenticationFilter가 폼 로그인 처리 담당
-        2) POST 요청에서 ID/PW 꺼내서 인증함
-        3) 인증 성공 시 → 세션 만들어서 SecurityContext에 저장함
-        기본 필터는 폼 로그인 기반으로 id/password를 받아서 세션을 만듦
-        하지만 JWT 기반의 경우 로그인 전에 요청 헤더에 토큰이 있는지 먼저 검사해야함
+        1) UsernamePasswordAuthenticationFilter가 폼 로그인 처리 담당<br>
+        2) POST 요청에서 ID/PW 꺼내서 인증함<br>
+        3) 인증 성공 시 → 세션 만들어서 SecurityContext에 저장함<br>
+        기본 필터는 폼 로그인 기반으로 id/password를 받아서 세션을 만듦<br>
+        하지만 JWT 기반의 경우 로그인 전에 요청 헤더에 토큰이 있는지 먼저 검사해야함<br>
 
         SecurityContext란?
     </div>
@@ -115,9 +114,9 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 <details>
     <summary>Spring Security 6.1부터 변경된 보안 설정 방식</summary>
     <div markdown="1">
-        - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()
-        - URL 패턴 지정 : antMatchers ➡️ requestMatchers
-        - 설정 방식 : 체인형(.) ➡️ 람다식
+        - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()<br>
+        - URL 패턴 지정 : antMatchers ➡️ requestMatchers<br>
+        - 설정 방식 : 체인형(.) ➡️ 람다식<br>
     </div>
 </details>  
 
