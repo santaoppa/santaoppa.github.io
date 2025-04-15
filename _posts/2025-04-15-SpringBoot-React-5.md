@@ -91,7 +91,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         ➡️ 서버가 상태(state)를 가짐<br><br>
         반면, JWT 기반 인증이란?<br>
         1) 로그인 시, 서버가 JWT 토큰 생성해서 클라이언트에 전달<br>
-        2) 이후 요청마다 클라이언트는 Authorization 헤더에 토큰을 붙여서 요청청<br>
+        2) 이후 요청마다 클라이언트는 Authorization 헤더에 토큰을 붙여서 요청<br>
         3) 서버는 그때그때 토큰 자체만 검증<br>
         ✅ 서버는 사용자의 로그인 상태 모름. 정보 모름. 그냥 토큰이 유효한지 검증함<br>
         ➡️ 서버는 상태를 기억하지 않음 → stateless
