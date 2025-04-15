@@ -1,5 +1,5 @@
 ---
-title: "[Web] Bearer이란?
+title: "[Web] Bearer이란?"
 
 categories:
   - Web
