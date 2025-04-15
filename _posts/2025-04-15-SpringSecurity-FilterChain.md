@@ -27,7 +27,7 @@ HTTP 요청이 들어오면 서블릿(Servlet)까지 도달하기 전에
 
 클라이언트로부터 HTTP 요청을 받으면, `DispatcherServlet`까지 가기 전에 여러 개의 필터가 순차적으로 실행됨
 
-각 필터는 다음 필터로 요청을 넘기기 위해 `chain.doFilter()`를 호출하며, 이 구조를 "Filter Chain"이라고 부름름
+각 필터는 다음 필터로 요청을 넘기기 위해 `chain.doFilter()`를 호출하며, 이 구조를 "Filter Chain"이라고 부름
 
 ![Image](https://github.com/user-attachments/assets/176cef72-43f1-4be3-aa9d-1750bb4e4a17)
 클라이언트가 API 요청을 하면 Web Server ➡️ Servlet ➡️ Controller 순으로 요청이 전달되는데,
