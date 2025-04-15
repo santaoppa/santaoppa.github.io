@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (4) JWT 인증 방식"
+title: "[React] 게시판 프로젝트 - (4) JWT 인증 방식(Spring)"
 
 categories:
   - Web
@@ -14,27 +14,27 @@ last_modified_at: 2025-04-15
 ---
 
 ## JWT란?
-JSON 포맷을 이용하여 사용자에 대한 속성을 저장하는 Claim 기반의 Web 토큰
+JSON 포맷을 이용하여 사용자에 대한 속성을 저장하는 Claim 기반의 Web 토큰  
 
 ### JWT 구조
 ![Image](https://github.com/user-attachments/assets/87df6430-6291-44ac-9588-98b1b24f3770)
 JWT는 Header, Payload, Signature 세가지로 구성됨  
 - `Header` : `Signature`를 해싱하기 위한 알고리즘 정보
 - `Payload` : 서버와 클라이언트가 서로 주고받을 실질적인 정보
-- `Signature` : 토큰의 유효성 검증을 위한 문자열
+- `Signature` : 토큰의 유효성 검증을 위한 문자열  
 
 
 ## Access Token
 사용자 인증 정보를 담고 있는 짧은 수명의 토큰으로
 클라이언트 측(브라우저 또는 앱)에서 로컬 스토리지, 세션 스토리지, 메모리, 쿠키 등에 저장함
 
-✅ 요청 시 Authorization: Bearer {AccessToken} 헤더로 전송
+✅ 요청 시 Authorization: Bearer {AccessToken} 헤더로 전송  
 
 ## Refresh Token
 Access Token이 만료되었을 때, 새로운 Access Token을 발급받기 위한 토큰으로
 보통 서버에서 DB에 저장하고, 클라이언트는 HttpOnly 쿠키로 저장함
 
-✅ 토큰 탈취에 대비해서 사용자별로 서버 측에서 상태를 갖고 관리
+✅ 토큰 탈취에 대비해서 사용자별로 서버 측에서 상태를 갖고 관리  
 
 
 ## JWT 인증 방식
