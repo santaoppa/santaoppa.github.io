@@ -89,7 +89,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
   
 
 1. 클라이언트가 로그인 요청 (`/api/auth/login`)
-```json
+```
 POST /api/auth/login
 Content-Type: application/json
 
@@ -142,9 +142,6 @@ const refreshToken = response.headers['refresh-token'];
 
 localStorage.setItem("accessToken", accessToken);
 localStorage.setItem("refreshToken", refreshToken);
-
-// 이후 요청에 헤더 설정
-axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 ```
 
 5. 이후 요청시 `JwtTokenFilter`의 `doFilterInternal()` 동작  
