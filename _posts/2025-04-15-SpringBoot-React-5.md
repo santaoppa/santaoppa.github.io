@@ -50,15 +50,6 @@ token.refresh_expiration_time=86400000
 ## `WebSecurityConfig.java`
 Spring Security의 보안 설정을 정의  
 
-<details>
-    <summary>Spring Security 6.1부터 변경된 보안 설정 방식</summary>
-    <div markdown="1">
-        - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()
-        - URL 패턴 지정 : antMatchers ➡️ requestMatchers
-        - 설정 방식 : 체인형(.) ➡️ 람다식식
-    </div>
-</details>
-
 ```java
 @Bean
 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
