@@ -89,77 +89,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
   
 
 1. 클라이언트가 로그인 요청 (`/api/auth/login`)
-```
-POST /api/auth/login
-Content-Type: application/json
-
-{
-  "userId": "testuser",
-  "password": "test1234"
-}
-```
-
 2. 해당 URL 매핑된 `UserController`의 `login()` 메서드 실행
-```java
-@PostMapping("/api/auth/login")
-public ResponseEntity<?> login(HttpServletResponse response, @RequestBody UserRequestDto requestDto){
-    UserResponseDto responseDto = userService.login(response, requestDto);
-    return ResponseEntity.ok(responseDto);
-}
-```
-
 3. `UserService`의 `login()` 메서드 실행
-```java
-@Transactional
-public UserResponseDto login(HttpServletResponse response, UserRequestDto userRequestDto) {
-    // 1. DB에서 유저 조회
-    User user = this.userRepository.findByUserId(userRequestDto.getUserId()).orElseThrow(...);
-
-    // 2. 비밀번호 비교
-    if (!passwordEncoder.matches(userRequestDto.getPassword(), user.getPassword())) {
-        throw new IllegalArgumentException("Wrong password");
-    }
-
-    // 3. JWT 토큰 생성
-    String accessToken = jwtUtil.generateToken(..., "access");
-    String refreshToken = jwtUtil.generateToken(..., "refresh");
-
-    // 4. DB에 refresh token 저장
-    userRepository.save(user.updateRefreshToken(refreshToken));
-
-    // 5. 토큰을 응답 헤더에 세팅
-    response.addHeader("Authorization", accessToken);
-    response.addHeader("Refresh-Token", refreshToken);
-
-    return new UserResponseDto(user);
-}
-```
-
 4. 프론트는 응답 헤더에서 토큰 저장  
-```js
-const accessToken = response.headers['authorization'];
-const refreshToken = response.headers['refresh-token'];
-
-localStorage.setItem("accessToken", accessToken);
-localStorage.setItem("refreshToken", refreshToken);
-```
-
 5. 이후 요청시 `JwtTokenFilter`의 `doFilterInternal()` 동작  
-```java
-protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) {
-    // 1. 헤더에서 토큰 추출
-    String accessToken = getTokenFromRequest(request); // "Bearer xxx..." → substring(7)
-
-    // 2. 토큰 유효성 검사
-    if (accessToken != null && jwtUtil.validateToken(accessToken)) {
-        // 3. 토큰에서 사용자 정보 꺼내 인증 객체 생성
-        UsernamePasswordAuthenticationToken authentication = getAuthenticationFromToken(accessToken);
-
-        // 4. SecurityContext 에 인증 정보 저장
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-    }
-
-    // 5. 다음 필터 체인으로 넘김
-    filterChain.doFilter(request, response);
-}
-```
