@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (4) JWT 인증 구현(Spring)"
+title: "[React] 게시판 프로젝트 - (5) JWT 인증 구현(Spring)"
 
 categories:
   - Web
@@ -9,8 +9,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2025-04-11
-last_modified_at: 2025-04-11
+date: 2025-04-15
+last_modified_at: 2025-04-15
 ---
 
 ## 의존성 추가
@@ -74,7 +74,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 <details>
     <summary>CSRF(Cross-site Request Forgery)란?</summary>
     <div markdown="1">
-       로그인된 사용자의 권한을 도용해서 원치 않는 요청을 서버에 보내는 공격으로 세션 기반 인증일 때 가능함. 하지만 JWT는 헤더로 직접 인증정보를 보내기 때문에 CSRF 공격이 불가능함!
+       로그인된 사용자의 권한을 도용해서 원치 않는 요청을 서버에 보내는 공격으로 세션 기반 인증일 때 가능함. <br>
+       하지만 JWT는 헤더로 직접 인증정보를 보내기 때문에 CSRF 공격이 불가능함!
     </div>
 </details>  
 
@@ -82,17 +83,18 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 <details>
     <summary>세션 기반 인증이란?</summary>
     <div markdown="1">
-        1) 로그인 시, 서버는 사용자 정보를 세션에 저장<br>
-        2) 세션ID를 클라이언트에 쿠키로 보냄.<br>
-        3) 이후 요청마다 쿠키에 세션 ID가 자동 첨부됨<br>
+        1) 로그인 시, 서버가 DB에서 사용자 정보 조회<br>
+        2) 세션ID와 사용자 정보를 세션 저장소에 저장<br>
+        3) 이후 요청마다 클라이언트는 쿠키에 담긴 JSESSIONID 자동 전송<br>
+        4) 서버는 JSESSIONID로 세션 저장소에서 사용자 정보를 꺼냄<br>
         ✅ 서버는 쿠키 내의 세션 ID를 키로 해서 서버가 직접 메모리에 사용자의 로그인 상태와 정보(예: 이름, 권한 등)를 기억하고 있음 <br>
         ➡️ 서버가 상태(state)를 가짐<br><br>
         반면, JWT 기반 인증이란?<br>
-        1) 로그인 시, 서버가 JWT 토큰만 만들어서 클라이언트에 전달<br>
-        2) 클라이언트는 이후 요청마다 Authorization 헤더에 토큰을 넣음<br>
-        3) 서버는 매번 토큰 안의 정보를 읽어서 사용자 정보를 검증함<br>
+        1) 로그인 시, 서버가 JWT 토큰 생성해서 클라이언트에 전달<br>
+        2) 이후 요청마다 클라이언트는 Authorization 헤더에 토큰을 붙여서 요청청<br>
+        3) 서버는 그때그때 토큰 자체만 검증<br>
         ✅ 서버는 사용자의 로그인 상태 모름. 정보 모름. 그냥 토큰이 유효한지 검증함<br>
-        ➡️ 서버는 상태를 기억하지 않음 → stateless<br>
+        ➡️ 서버는 상태를 기억하지 않음 → stateless
     </div>
 </details>  
 
@@ -103,11 +105,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
     <div markdown="1">
         1) UsernamePasswordAuthenticationFilter가 폼 로그인 처리 담당<br>
         2) POST 요청에서 ID/PW 꺼내서 인증함<br>
-        3) 인증 성공 시 → 세션 만들어서 SecurityContext에 저장함<br>
-        기본 필터는 폼 로그인 기반으로 id/password를 받아서 세션을 만듦<br>
-        하지만 JWT 기반의 경우 로그인 전에 요청 헤더에 토큰이 있는지 먼저 검사해야함<br>
-
-        SecurityContext란?
+        3) 인증 성공 시 → 세션 만들어서 SecurityContext에 저장함<br><br>
+        ✔️ SecurityContext란? 현재 사용자의 인증(Authentication) 정보를 담고 있는 Spring Security의 저장소
     </div>
 </details>
 
@@ -116,7 +115,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
     <div markdown="1">
         - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()<br>
         - URL 패턴 지정 : antMatchers ➡️ requestMatchers<br>
-        - 설정 방식 : 체인형(.) ➡️ 람다식<br>
+        - 설정 방식 : 체인형(.) ➡️ 람다식
     </div>
 </details>  
 
