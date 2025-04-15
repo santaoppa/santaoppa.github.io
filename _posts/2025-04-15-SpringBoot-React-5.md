@@ -53,9 +53,9 @@ Spring Security의 보안 설정을 정의
 <details>
     <summary>Spring Security 6.1부터 변경된 보안 설정 방식</summary>
     <div markdown="1">
-        - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()<br>
-        - URL 패턴 지정 : antMatchers ➡️ requestMatchers<br>
-        - 설정 방식 : 체인형(.) ➡️ 람다식
+        - 인증 설정 메서드 : authorizeRequests() ➡️ authorizeHttpRequests()
+        - URL 패턴 지정 : antMatchers ➡️ requestMatchers
+        - 설정 방식 : 체인형(.) ➡️ 람다식식
     </div>
 </details>
 
