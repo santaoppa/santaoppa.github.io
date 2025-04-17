@@ -20,5 +20,9 @@ main:
 categories:
   - title: "Web"
     url: /categories/web/
+  - title: "Spring"
+    url: /categories/spring/
   - title: "Java"
     url: /categories/java/
+  - title: "React"
+    url: /categories/react/
