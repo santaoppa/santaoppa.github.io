@@ -41,9 +41,7 @@ UserApi.interceptors.request.use((config) => {
 ```
 
 ## ☑️ 해결책
-➡️ 공통 API 요청 처리 인스턴스 생성  
-
-토큰을 모든 요청의 header에 자동으로 추가하기 위해 `AxiosApi`라는 공통 API 요청 처리 인스턴스를 생성하여
+토큰을 모든 요청의 header에 자동으로 추가하기 위해 `AxiosApi`라는 **공통 API 요청 처리 인스턴스를 생성**하여
 여러 컴포넌트에서 토큰을 쉽게 관리하고, API 요청을 처리할 수 있음
 
 ### 1. 공통 API 요청 처리 인스턴스 생성  
