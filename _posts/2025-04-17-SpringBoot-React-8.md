@@ -36,7 +36,7 @@ useEffect(() => {
 
 ## ☑️ 해결책
 **`UserContext`를 활용**하여 로그인된 사용자 정보를 전역 상태로 관리하고, 이를 하위 컴포넌트에 context를 통해 전달함
-
+  
 ### 1. `UserContext`를 생성
 `UserContext`를 생성하여 로그인 상태를 관리할 수 있는 context를 정의함
 ```js
