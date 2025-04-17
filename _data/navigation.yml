@@ -3,8 +3,8 @@ main:
   - title: "Home"
     url: https://santaoopa.github.io
 
-  - title: "About"
-    url: /about/
+  #- title: "About"
+  #  url: /about/
 
   - title: "GitHub"
     url: https://github.com/santaoppa
