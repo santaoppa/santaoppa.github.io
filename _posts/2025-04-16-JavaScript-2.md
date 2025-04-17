@@ -5,7 +5,7 @@ excerpt : "자바스크립트 핵심 개념 : DOM, BOM, script 로딩 방식, th
 categories:
   - Web
 tags:
-  - [Web]
+  - [Web, JavaScript]
 
 toc: true
 toc_sticky: true

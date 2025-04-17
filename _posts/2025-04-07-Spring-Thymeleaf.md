@@ -2,7 +2,7 @@
 title: "[Spring Boot] 타임리프(Thymeleaf)란?"
 
 categories:
-  - Web
+  - Spring
 tags:
   - [Spring boot, Thymeleaf]
 
