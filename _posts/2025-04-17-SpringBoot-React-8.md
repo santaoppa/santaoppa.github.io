@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2025-04-18
-last_modified_at: 2025-04-18
+date: 2025-04-17
+last_modified_at: 2025-04-17
 ---
 ## ‼️ 문제점
 매번 API 요청을 통해 회원 정보를 불러오는 방식은 불필요한 반복 작업을 하고있었음.
