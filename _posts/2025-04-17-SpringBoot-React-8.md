@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2025-04-18
-last_modified_at: 2025-04-18
+date: 2025-04-17
+last_modified_at: 2025-04-17
 ---
 ## ‼️ 문제점
 매번 API 요청을 통해 회원 정보를 불러오는 방식은 불필요한 반복 작업을 하고있었음.
@@ -35,7 +35,7 @@ useEffect(() => {
 ```
 
 ## ☑️ 해결책
-**`UserContext`를 활용**하여 로그인된 사용자 정보를 전역 상태로 관리하고, 이를 하위 컴포넌트에 context를 통해 전달함
+`UserContext`를 활용하여 로그인된 사용자 정보를 전역 상태로 관리하고, 이를 하위 컴포넌트에 context를 통해 전달함
 
 ### 1. `UserContext`를 생성
 `UserContext`를 생성하여 로그인 상태를 관리할 수 있는 context를 정의함
@@ -116,7 +116,7 @@ function App() {
 ```
 
 ### 5. 하위 컴포넌트에서 `UserContext` 사용
-하위 컴포넌트에서는 useAuth() 훅을 사용하여 로그인된 사용자 정보와 로딩 상태를 가져올 수 있음
+하위 컴포넌트에서는 `useAuth()`을 사용하여 로그인된 사용자 정보와 로딩 상태를 가져올 수 있음
 
 ```js
 const [user, setUser] = useState(null);
