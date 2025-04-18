@@ -61,7 +61,7 @@ const [confirmPassword, setConfirmPassword] = useState(null);
 
 ## 바뀐 코드
 상태를 그룹화하여 form 객체를 하나의 상태로 관리하고, `onChange` 핸들러를 하나로 통합하여 중복 코드를 줄이고, 상태 관리를 더 깔끔하게 할 수 있음  
-이렇게 하면 추후 상태를 추가하거나 수정하기 쉬워짐 🤓  
+이렇게 하면 추후 상태를 추가하거나 수정하기 쉬워짐 👍  
 
 ```js
 const [form, setForm] = useState ({
