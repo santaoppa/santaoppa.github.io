@@ -2,7 +2,7 @@
 title: "[Spring] @PathVariable란?"
 
 categories:
-  - Web
+  - Spring
 tags:
   - [Spring]
 

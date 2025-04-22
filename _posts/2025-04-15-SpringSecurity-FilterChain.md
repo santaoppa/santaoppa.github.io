@@ -2,9 +2,9 @@
 title: "[Spring Security] Filter Chain이란?"
 
 categories:
-  - Web
+  - Spring
 tags:
-  - [Web, Spring Security]
+  - [Spring Security]
 
 toc: true
 toc_sticky: true

@@ -2,7 +2,7 @@
 title: "[Spring] @Autowired란?"
 
 categories:
-  - Web
+  - Spring
 tags:
   - [Spring]
 
