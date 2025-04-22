@@ -2,7 +2,7 @@
 title: "[Spring] @RestController란?"
 
 categories:
-  - Web
+  - Spring
 tags:
   - [Spring]
 
