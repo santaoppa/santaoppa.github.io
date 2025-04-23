@@ -1,6 +1,6 @@
 ---
 title: "[React] 조건부/리스트 렌더링"
-excerpt: ""
+excerpt: "조건에 따라 컴포넌트를 렌더링하거나 배열을 기반으로 반복 렌더링하는 방법"
 
 categories:
   - React
@@ -15,7 +15,7 @@ last_modified_at: 2025-04-23
 ---
 
 ## 조건부 렌더링
-### if문
+### 1. `if`문 사용
 ```js
 function Item({ name, isPacked }) {
   if (isPacked) {
@@ -48,7 +48,7 @@ export default function PackingList() {
 
 ```
 
-### 삼항 조건 연산자
+### 2. 삼항 연산자 사용
 ```js
 return (
   <li className="item">
@@ -57,7 +57,7 @@ return (
 );
 ```
 
-### 논리 AND 연산자 
+### 3. 논리 AND (&&) 연산자 사용
 ```js
 return (
   <li className="item">
@@ -87,20 +87,19 @@ export default function List() {
 ```
   
 > 🚨 **주의사항**<br/>
-> map() 호출 내부의 JSX 엘리먼트에는 항상 **key**가 필요함. 따라서 리스트 렌더링 시 각 배열 항목에 다른 항목 중에서 고유하게 식별할 수 있는 문자열 또는 숫자를 key로 지정해야 한다!
+> map()을 사용할 때는 반드시 고유한 key 값을 각 요소에 지정해야 함!
 ```js
 <li key={person.id}>...</li>
 ```
   
-### 리스트 항목 필터링하기
-1. 필터링한 새로운 배열 생성하기
-```js
+### 리스트 항목 필터링
+1. .filter()로 새 배열 만들기
 const chemists = people.filter(person =>
   person.profession === 'chemist'
 );
 ```
 
-2. 배열 매핑하기
+2. .map()으로 컴포넌트 생성
 ```js
 const listItems = chemists.map(person =>
   <li>
@@ -117,11 +116,36 @@ const listItems = chemists.map(person =>
 );
 ```
 
-3. 컴포넌트에서 반환하기
+3. 컴포넌트에서 반환
 ```js
 return <ul>{listItems}</ul>;
 ```
   
+### 하나의 컴포넌트에 중첩된 리스트 
+```js
+import { recipes } from './data.js';
+
+export default function RecipeList() {
+  return (
+    <div>
+      <h1>Recipes</h1>
+      {recipes.map(recipe =>
+        <div key={recipe.id}>
+          <h2>{recipe.name}</h2>
+          <ul>
+            {recipe.ingredients.map(ingredient =>
+              <li key={ingredient}>
+                {ingredient}
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
 ### 각 리스트 항목에 대해 여러 DOM 노드 표시하기
 각 항목이 하나가 아닌 여러 개의 DOM 노드를 렌더링해야하는 경우
 `<Fragment>` 문법을 사용해야 한다!
@@ -148,4 +172,14 @@ function CourseListCard({ title, items }) {
     </Card>
   );
 }
+```
+
+### ⚠️ forEach 함수
+React에서 `forEach`는 `map()`과 헷갈리는 경우가 많음.
+하지만 `forEach`는 배열의 요소를 순회만 할 뿐 컴포넌트를 반환해 주는 메서드가 아님
+
+```js
+배열.forEach((요소, 인덱스, 배열) => {
+  // 실행할 코드
+});  
 ```
