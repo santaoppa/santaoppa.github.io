@@ -18,8 +18,8 @@ last_modified_at: 2025-04-23
 `props`는 JSX 태그를 통해 컴포넌트에 전달하는 **데이터**로 
 React에서는 컴포넌트 간에 정보를 주고받을 때 `props`를 활용함
 
-- **부모 컴포넌트**는 `props`를 통해 **자식 컴포넌트에 데이터 전달** 가능
-- 자식 컴포넌트는 전달받은 `props`를 **읽기 전용으로 사용**  
+- 부모 컴포넌트는 `props`를 통해 자식 컴포넌트에 **데이터 전달** 가능
+- 자식 컴포넌트는 전달받은 `props`를 읽기 전용으로 사용* 
   
 ## props 전달하기
 ```js
@@ -39,7 +39,7 @@ function Avatar({ person, size }) {
 }
 ```
 
-### 객체 전달하기 객체 형태로 전달하기 (Spread 문법)
+### 1️⃣ 객체 전달하기 객체 형태로 전달하기 (Spread 문법)
 반복되는 props는 **spread 연산자(...)**를 활용하여 간결하게 전달할 수 있음
 
 ```js
@@ -60,7 +60,7 @@ function Avatar(props) {
 }
 ```
   
-### 배열 전달하기
+### 2️⃣ 배열 전달하기
 배열 형태의 데이터를 전달하고, 내부에서 구조 분해 할당으로 처리할 수 있음
 ```js
 export default function Profile() {
@@ -87,8 +87,8 @@ function Avatar( {items}) {
 }
 ```
   
-## 콘텐츠로 컴포넌트 전달하기
-컴포넌트 태그 사이에 내용을 작성하면, 해당 내용은 props.children으로 자식 컴포넌트에 전달됨
+### 3️⃣ 콘텐츠로 컴포넌트 전달하기
+컴포넌트 태그 사이에 내용을 작성하면, 해당 내용은 `props.children`으로 자식 컴포넌트에 전달됨
 
 ```js
 export default function Profile() {
@@ -191,7 +191,7 @@ export default function Gallery() {
 }
 ```
 
-### 변경 후
+### ➡️ 변경 후
 
 ```js
 import { getImageUrl } from './utils.js';
