@@ -1,5 +1,6 @@
 ---
 title: "[Java] Lombok이란?"
+excerpt: ""
 
 categories:
   - Java

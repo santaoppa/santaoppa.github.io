@@ -24,8 +24,8 @@ last_modified_at: 2025-04-23
 - **버블링 단계(Bubbling Phase)**: 이벤트가 발생한 요소에서 다시 최상위 요소까지 올라감
 - **캡처링 단계(Capturing Phase)**: 최상위 요소에서 이벤트가 발생한 요소까지 내려감
 
-
 기본적으로 `addEventListener`는 **버블링** 방식으로 동작함
+  
 
 ##  버블링
 `addEventListener`는 버블링으로 동작하기 때문에 `span` 태그 클릭하면 `body` 태그 영역까지 이벤트가 실행됨
@@ -54,7 +54,7 @@ last_modified_at: 2025-04-23
   })
 ```
 
-## ➡️ 결과
+## ✅ 클릭 시 결과
 ```
 span 태그
 p 태그
@@ -64,7 +64,8 @@ body 태그
 ```
 
 # 캡쳐링
-파라미터로 `AddEventListenerOptions`를 true를 넣으면 캡쳐링으로 동작
+캡처링을 사용하려면 `addEventListener`의 세 번째 인자에 true를 전달
+
 ```js
   $span.addEventListener('click', function(){
     console.log('capturing span 태그');
@@ -98,7 +99,7 @@ body 태그
   })
 ```
 
-## ➡️ 결과
+## ✅ 클릭 시 결과
 ```
 capturing body 태그
 capturing main 태그
@@ -113,7 +114,8 @@ bubbling body 태그
 ```
 
 # 이벤트 막기
-## 1. `stopPropagation()` : 전파 멈추기
+## 1. `stopPropagation()`
+이벤트 전파(캡처링 & 버블링)을 중단함
 ```js
   $span.addEventListener('click', function(){
     console.log('capturing span 태그');
@@ -148,7 +150,7 @@ bubbling body 태그
   })
 ```
 
-### ➡️ 결과
+### ✅ 클릭 시 결과
 ```
 capturing body 태그
 capturing main 태그
@@ -156,7 +158,8 @@ capturing div 태그
 capturing p 태그
 ```
 
-## 2.`Event.preventDefault()` : 기본 동작 방지
+## 2.`Event.preventDefault()`
+기본 동작 방지
 ```js
   <a href="http://naver.com">네이버 이동</a>
 
