@@ -1,5 +1,5 @@
 ---
-title: "[Web] JavaScript 핵심 개념"
+title: "[JavaScript] JavaScript 핵심 개념"
 excerpt : "자바스크립트 핵심 개념 : DOM, BOM, script 로딩 방식, this 등"
 
 categories:
