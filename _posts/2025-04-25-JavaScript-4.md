@@ -45,7 +45,7 @@ copy : {name: '김철수', info: {age: 50}}
 2. `Object.assign()` 
 3. 배열의 `slice()`, `concat()`, `Array.from()`
    
-
+   
 ## 깊은 복사(Deep Copy)
 깊은 복사란 객체의 모든 속성과 중첩된 객체들을 완전히 새로운 메모리에 복사하는 방식
    
@@ -74,7 +74,7 @@ copy : {name: '김철수', info: {age: 50}}
 1. `JSON.stringfy()` + `JSON.parse()`
 2. `structureClone()`
    
-
+   
 ## 얕은 복사 vs 깊은 복사 활용 사례
 ### 얕은 복사 활용 사례
 - 최상위 속성만 변경이 필요한 경우
