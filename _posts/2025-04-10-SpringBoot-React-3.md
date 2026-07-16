@@ -2,9 +2,9 @@
 title: "[React] 게시판 프로젝트 - (3) React와 API 연동"
 
 categories:
-  - Web
+  - React
 tags:
-  - [Web, Spring boot, React]
+  - [React]
 
 toc: true
 toc_sticky: true
