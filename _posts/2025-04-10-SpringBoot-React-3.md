@@ -1,10 +1,10 @@
 ---
-title: "[React] 게시판 프로젝트 - (3) React와 API 연동"
+title: "[Web/React] 게시판 프로젝트 - (3) React와 API 연동"
 
 categories:
-  - React
+  - Web
 tags:
-  - [React]
+  - [Web, React]
 
 toc: true
 toc_sticky: true
