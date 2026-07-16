@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (6) JWT 인증 구현(react)"
+title: "[Web/React] 게시판 프로젝트 - (6) JWT 인증 구현(react)"
 excerpt: Spring Boot에서 구현한 JWT 기반 인증 시스템을 React 클라이언트에서 사용하는 방법
 
 categories:
