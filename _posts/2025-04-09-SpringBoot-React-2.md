@@ -1,11 +1,11 @@
 ---
-title: "[React] 게시판 프로젝트 - (2) Router 컴포넌트 구현"
+title: "[Web/React] 게시판 프로젝트 - (2) Router 컴포넌트 구현"
 excerpt: "게시판 관련 컴포넌트 및 Router 컴포넌트 구현 "
 
 categories:
-  - React
+  - Web
 tags:
-  - [React]
+  - [Web, React]
 
 toc: true
 toc_sticky: true
