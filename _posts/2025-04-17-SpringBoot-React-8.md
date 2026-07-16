@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (8) UserContext를 활용해 로그인 상태 관리"
+title: "[Web/React] 게시판 프로젝트 - (8) UserContext를 활용해 로그인 상태 관리"
 excerpt: "로그인된 사용자 정보를 전역 상태로 관리"
 
 categories:
