@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (7) 공통 API 요청 처리 인스턴스 생성"
+title: "[Web/React] 게시판 프로젝트 - (7) 공통 API 요청 처리 인스턴스 생성"
 excerpt: "공통 API 요청 처리 인스턴스를 활용하여 동기화된 토큰 정보를 API 요청에 포함시킬 수 있음"
 
 categories:
