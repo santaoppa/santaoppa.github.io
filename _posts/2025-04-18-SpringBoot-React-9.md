@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (9) React 상태 관리 최적화"
+title: "[Web/React] 게시판 프로젝트 - (9) React 상태 관리 최적화"
 excerpt: ""
 
 categories:
