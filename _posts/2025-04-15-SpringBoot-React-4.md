@@ -1,5 +1,5 @@
 ---
-title: "[React] 게시판 프로젝트 - (4) JWT 인증 방식(Spring)"
+title: "[Web/React] 게시판 프로젝트 - (4) JWT 인증 방식(Spring)"
 
 categories:
   - Web
