@@ -3,9 +3,9 @@ title: "[React] 게시판 프로젝트 - (2) Router 컴포넌트 구현"
 excerpt: "게시판 관련 컴포넌트 및 Router 컴포넌트 구현 "
 
 categories:
-  - Web
+  - React
 tags:
-  - [Web, Spring boot, React]
+  - [React]
 
 toc: true
 toc_sticky: true
