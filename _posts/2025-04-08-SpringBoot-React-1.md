@@ -1,11 +1,11 @@
 ---
-title: "[React] 게시판 프로젝트 - (1) Spring Boot와 React 연동하기"
+title: "[Web/React] 게시판 프로젝트 - (1) Spring Boot와 React 연동하기"
 excerpt: "Spring Boot + React.js 개발환경 구축하기 "
 
 categories:
-  - React
+  - Web
 tags:
-  - [Spring boot, React]
+  - [Web, Spring boot, React]
 
 toc: true
 toc_sticky: true
